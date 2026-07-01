@@ -1,11 +1,16 @@
-// scroll reveal
-const sections = document.querySelectorAll('.reveal');
 
-window.addEventListener('scroll', () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      sec.classList.add('show');
-    }
+async function send() {
+  const input = document.getElementById('input').value;
+
+  document.getElementById('output').innerText = "Generating...";
+
+  const res = await fetch('http://localhost:3000/generate', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ prompt: input })
   });
-});
+
+  const data = await res.json();
+
+  document.getElementById('output').innerText = data.reply;
+}
