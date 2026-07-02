@@ -1,26 +1,76 @@
 
-body {
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
-  text-align: center;
+body{
+margin:0;
+font-family:Arial;
+background:#0b0b0b;
+color:white;
 }
 
-.hero {
-  padding: 40px;
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:#111;
+position:sticky;
+top:0;
 }
 
-.chat {
-  margin-top: 20px;
+.hero{
+text-align:center;
+padding:120px 20px;
+background:linear-gradient(135deg,#111,#1f1f1f);
 }
 
-textarea {
-  width: 80%;
-  height: 120px;
+.btn{
+display:inline-block;
+padding:12px 25px;
+background:gold;
+color:black;
+border-radius:8px;
+text-decoration:none;
+margin-top:15px;
+transition:0.3s;
 }
 
-button {
-  padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
+.btn:hover{
+transform:scale(1.1);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+padding:20px;
+}
+
+.card{
+background:#1a1a1a;
+padding:20px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:#222;
+}
+
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+.fade{
+animation:fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#111;
 }

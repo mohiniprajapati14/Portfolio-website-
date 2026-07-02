@@ -1,16 +1,10 @@
 
-async function send() {
-  const input = document.getElementById('input').value;
-
-  document.getElementById('output').innerText = "Generating...";
-
-  const res = await fetch('http://localhost:3000/generate', {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({ prompt: input })
+document.addEventListener("scroll", () => {
+  document.querySelectorAll(".card").forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if(rect.top < window.innerHeight){
+      card.style.opacity = 1;
+      card.style.transform = "translateY(0)";
+    }
   });
-
-  const data = await res.json();
-
-  document.getElementById('output').innerText = data.reply;
-}
+});
